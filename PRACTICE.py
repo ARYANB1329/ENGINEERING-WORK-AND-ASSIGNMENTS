@@ -1,8 +1,14 @@
-import pandas as pd
-import numpy as np
+import numpy
 
-# Read dataset in form of CSV files
-df = pd.read_csv("C:/Users/Aryansid/Downloads/penguins_DataSet_exam.csv")
-missing_data = df.isnull().any()
-print(missing_data.head(20))
+n , m = input().split()
+x = list(map(int, input().split()))
+y = list(map(int, input().split()))
 
+my_array = []
+my_array.append(x)
+my_array.append(y)
+print(numpy.mean(my_array, axis=1))
+print(numpy.var(my_array, axis=0))
+king = numpy.std(my_array)
+ping = round(king,11)
+print(ping)

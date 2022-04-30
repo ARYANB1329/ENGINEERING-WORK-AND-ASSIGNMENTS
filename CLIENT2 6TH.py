@@ -1,0 +1,13 @@
+import socket
+client = socket.socket()
+source = input(" Enter desired file : ")
+client.connect(("localhost", 5006))
+client.send(source.encode())
+n = input("Enter new file name : ")
+f = open(n,"wb")
+received_file = client.recv(1024)
+f.write(received_file)
+f.close()
+client.close()
+print("file received by client ")
+print("Connection Lost")
