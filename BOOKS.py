@@ -1,0 +1,30 @@
+def showcontents(n):
+    BookContents = open("file.txt", 'r')
+    showcontent = BookContents.readlines()[n]
+    BookContents.close()
+    return showcontent
+
+nameofBook = input("Enter the name of the Book : ")
+nameofAuthor = input("Enter the name of the writer : ")
+nameofpublisher = input("Enter the name of the publisher : ")
+numberofPages = input("Enter number of pages in it : ")
+Bookdetails = open("file.txt", "w")
+Bookdetails.write(nameofBook)
+Bookdetails.write("\n")
+Bookdetails.write(nameofAuthor)
+Bookdetails.write("\n")
+Bookdetails.write(nameofpublisher)
+Bookdetails.write("\n")
+
+Bookdetails.write(numberofPages)
+print ("Details successfully saved\n")
+Bookdetails.close()
+bookname = showcontents(0)
+bookauthor = showcontents(1)
+bookpublisher = showcontents(2)
+bookpages = showcontents(3)
+print("The details of the book are :\n")
+print("The name of the book is :",bookname)
+print("The name of the Author is :", bookauthor)
+print( "The name of the publisher is :",bookpublisher)
+print( "The number of the pages in the book is :",bookpages)
